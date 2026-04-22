@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Full Stack</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at center, #1b103d 0%, #090b1a 60%, #04060f 100%);
+      overflow: hidden;
+      position: relative;
+      color: white;
+    }
+
+    /* efeito de fundo */
+    body::before,
+    body::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 300px;
+      left: 0;
+      z-index: 0;
+      opacity: 0.25;
+      background: linear-gradient(90deg, #7c3aed, #2563eb);
+      filter: blur(80px);
+    }
+
+    body::before {
+      bottom: 0;
+    }
+
+    body::after {
+      top: 0;
+    }
+
+    .card {
+      width: 850px;
+      background: rgba(10, 15, 35, 0.92);
+      border: 1px solid rgba(124, 58, 237, 0.4);
+      border-radius: 24px;
+      padding: 40px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+      backdrop-filter: blur(20px);
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profile img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #7c3aed;
+    }
+
+    .info h1 {
+      font-size: 42px;
+      line-height: 1.1;
+    }
+
+    .info h1 span {
+      color: #8b5cf6;
+    }
+
+    .info h2 {
+      font-size: 24px;
+      font-weight: 400;
+      margin-top: 8px;
+      color: #d1d5db;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #22c55e;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .btn {
+      text-decoration: none;
+      background: #8b5cf6;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 500;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(139,92,246,0.3);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid #8b5cf6;
+    }
+
+    .section {
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+    }
+
+    .section h3 {
+      font-size: 24px;
+      margin-bottom: 18px;
+      color: #a78bfa;
+    }
+
+    .section p {
+      color: #d1d5db;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .skill {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      border-color: #8b5cf6;
+      transform: translateY(-2px);
+    }
+
+    .social {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .social a {
+      color: white;
+      font-size: 28px;
+      transition: 0.3s;
+    }
+
+    .social a:hover {
+      color: #8b5cf6;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 900px) {
+      .card {
+        width: 95%;
+        padding: 25px;
+      }
+
+      .top {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+      }
+
+      .info h1 {
+        font-size: 32px;
+      }
+
+      .info h2 {
+        font-size: 18px;
+      }
+
+      .buttons {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <div class="top">
+      <div class="profile">
+        <img src="Foto profi.jpeg" alt="Perfil">
+
+        <div class="info">
+          <h1>Gabriel <span>Santana</span></h1>
+          <h2>Desenvolvedor Full Stack</h2>
+          <div class="status">
+            Brasil | Disponível para oportunidades
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <a href="#" class="btn">
+          <i class="fa-solid fa-envelope"></i> Email
+        </a>
+
+        <a href="#" class="btn secondary">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Sobre Mim</h3>
+      <p>
+        Desenvolvedor Full Stack com foco em criação de aplicações escaláveis, performáticas e centradas na experiência do usuário. Experiência em desenvolvimento Front-end e Back-end utilizando JavaScript, React, Node.js, Python, SQL e integração com APIs. Conhecimento em banco de dados, automação de processos, análise de dados e soluções em nuvem com AWS. Perfil analítico, proativo e orientado à resolução de problemas, com facilidade para trabalhar em equipe, aprender novas tecnologias e entregar soluções eficientes que geram impacto real no negócio.
+
+        <br><br>
+        Atualmente atuo no Banco do Brasil e sigo em constante evolução
+        na área de desenvolvimento e análise de dados, combinando lógica,
+        criatividade e visão estratégica para transformar problemas em soluções.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Competências Técnicas</h3>
+
+    <div class="skills">
+
+  <div class="skill">
+    <i class="fa-brands fa-html5"></i> HTML5
+  </div>
+
+  <div class="skill">
+    <i class="fa-brands fa-css3-alt"></i> CSS3
+  </div>
+
+  <div class="skill">
+    <i class="fa-brands fa-js"></i> JavaScript
+  </div>
+
+  <div class="skill">
+    <i class="fa-brands fa-react"></i> React
+  </div>
+
+  <div class="skill">
+    <i class="fa-brands fa-node-js"></i> Node.js
+  </div>
+
+  <div class="skill">
+    <i class="fa-brands fa-python"></i> Python
+  </div>
+
+  <div class="skill">
+    <i class="fa-solid fa-database"></i> SQL
+  </div>
+
+  <div class="skill">
+    <i class="fa-brands fa-aws"></i> AWS
+  </div>
+
+  <div class="skill">
+    <i class="fa-brands fa-git-alt"></i> Git
+  </div>
+
+
+
+</body>
+</html>
+
+<div class="social">
+  <a href="https://github.com/Gabriel7john" target="_blank">
+    <i class="fa-brands fa-github"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/gabriel-santana-souza-pereira-ba1786306/" target="_blank">
+    <i class="fa-brands fa-linkedin"></i>
+  </a>
+
+  <a href="gabrielsantana0740@gmail.com">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+</div>
